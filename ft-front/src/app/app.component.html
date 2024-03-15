@@ -4,7 +4,7 @@
         <app-compo-get></app-compo-get>
         <app-addnew></app-addnew>
     </div>
-    <button (click)="logoutt()">Log Out</button>
+    
 </div>
 
 <div *ngIf="!authService.isLoggedIn()">
@@ -21,10 +21,8 @@
             <input type="password" [(ngModel)]="pass" name="pass" placeholder="Password">
             </div>
             <div class="form-field">
-            <button type="submit" class="btn" (click)="login()">Log in</button>
+                <button type="submit" class="btn" (click)="login()">Log in</button>
             </div>
-
-
         </form>
 
     </div>

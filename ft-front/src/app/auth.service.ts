@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -34,10 +35,20 @@ export class AuthService {
     localStorage.setItem('user_id', userId.toString());
   }
 
+  getUserId(): Observable<number> {
+    return this.http.get<any>(this.apiUrl).pipe(
+      map(response => response.userId)
+    );
+  }
+  getUserName(): Observable<number> {
+    return this.http.get<any>(this.apiUrl).pipe(
+      map(response => response.username)
+    );
+  }
+
   logout() {
     this.token = '';
     this.userId = null;
     localStorage.removeItem('auth_token');
   }
-
 }

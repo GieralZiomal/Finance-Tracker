@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../auth.service';
 
-
 @Component({
   selector: 'app-addnew',
   templateUrl: './addnew.component.html',
@@ -17,15 +16,14 @@ export class AddnewComponent {
 
   constructor(private authService: AuthService, private http: HttpClient) { }
 
-  getData(n:string,a:string,s:string,d:string) 
-  {
+  getData(n: string, a: string, s: string, d: string) {
 
-    this.typeofMod = s
-    this.nameg = n
-    this.amount = a
-    this.dateofMod = d
-    
-    this.postData()
+    this.typeofMod = s;
+    this.nameg = n;
+    this.amount = a;
+    this.dateofMod = d;
+
+    this.postData();
 
   }
 
@@ -41,6 +39,7 @@ export class AddnewComponent {
     this.http.post<any>('http://127.0.0.1:8000/api/get/', requestData).subscribe(
       (data) => {
         console.log('Posted data successfully:', data);
+        location.reload(); // Odśwież stronę
       },
       (error) => {
         console.error('Error posting data:', error);
@@ -63,3 +62,4 @@ export class AddnewComponent {
   }
 
 }
+
