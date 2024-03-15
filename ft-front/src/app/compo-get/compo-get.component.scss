@@ -1,0 +1,48 @@
+body{ 
+
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.compo-ge {
+
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: #272829;
+    color: white;
+    width: 49%;
+    height: auto;
+    border: 2px solid #61677A;
+    border-radius: 5px;
+    float: left;
+    margin-right: 0;
+
+    .box 
+    {
+
+        font-size: 15px;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: baseline;
+        gap: 10px;
+        border: 1% solid black;
+        .p {
+
+            margin: 0px;
+            padding: 0px;
+            width: 50%;
+            height: auto;
+
+        }
+
+    }
+
+}

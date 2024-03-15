@@ -1,0 +1,32 @@
+<div class="appLogicWrapper" *ngIf="authService.isLoggedIn()">
+    <app-balance></app-balance>
+    <div class="dataLog">
+        <app-compo-get></app-compo-get>
+        <app-addnew></app-addnew>
+    </div>
+    <button (click)="logoutt()">Log Out</button>
+</div>
+
+<div *ngIf="!authService.isLoggedIn()">
+
+    <div class="loginBox">
+
+        <h1>Logowanie</h1>
+        <form>
+        
+            <div class="form-field">
+            <input type="text" [(ngModel)]="usern" name="usern" placeholder="Username">
+            </div>
+            <div class="form-field">
+            <input type="password" [(ngModel)]="pass" name="pass" placeholder="Password">
+            </div>
+            <div class="form-field">
+            <button type="submit" class="btn" (click)="login()">Log in</button>
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,31 @@
+<div class="AddNewBox">
+
+    <h1>ADD NEW OPERATION</h1>
+    <form style="width: 100%; margin: 0; padding: 0; text-align: center;">
+        <label for="name">Title:</label><br>
+        <input required type="text" id="name" name="name" #name style="width: 30%; margin: 0; padding: 0; text-align: center; height: auto; font-size: large; background-color: black; color: white; border: 2px white solid; border-radius: 3px;"><br>
+        <label for="amount">Amount:</label><br>
+        <input required type="number" id="amount" name="amount" #amount style="width: 30%; margin: 0; padding: 0; text-align: center; height: auto; font-size: large; background-color: black; color: white; border: 2px white solid; border-radius: 3px;"><br>
+        <label for="typelist">Type of Operation:</label><br>
+        <select required id="type" name="typelist" form="typeform" #select style="width: 30%; margin: 0; padding: 0; text-align: center; height: auto; font-size: large; background-color: black; color: white; border: 2px white solid; border-radius: 3px;"><br>
+            <option value="Expenses">Expenses</option>
+            <option value="Receipts">Receipts</option>
+        </select><br>
+        <label for="datei">Date of Operation:</label><br>
+        <input required type="datetime-local" id="datei" name="datei" #date style="width: 30%; margin: 0; padding: 0; text-align: center; height: auto; font-size: large; background-color: black; color: white; border: 2px white solid; border-radius: 3px;"><br>
+        <input required type="submit" value="Add New" id="subButt" (click)="getData(name.value,amount.value,select.value,date.value)" style="width: 30%;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        height: auto;
+        font-size: large;
+        background-color: black;
+        color: white;
+        border: 2px white solid;
+        border-radius: 3px;
+        margin-top: 10px;"
+ (mouseenter)="onMouseEnter()"
+ (mouseleave)="onMouseLeave()">
+    </form>
+
+</div>

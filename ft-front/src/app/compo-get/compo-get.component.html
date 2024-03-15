@@ -1,0 +1,15 @@
+<div class="compo-ge">
+  <h1>TRANSACTIONS</h1>
+  <div class="box" *ngFor="let data of currentDisplayedData"  [ngStyle]="{'background-color': data.typeofMod == 'Expenses' ? 'red':'green'}">
+    <img [src]="data.typeofMod === 'Expenses' ? 'assets/expense.png' : 'assets/income.png'" alt="Income or Expense Image" style="height: auto; width: 8%;">
+    <p>{{data.name | uppercase}}</p>
+    <p><span *ngIf="data.typeofMod == 'Expenses'">-</span>{{data.amount | currency:"PLN":true}}</p>
+    <p style="margin: auto;">{{data.dateofMod | date:"medium"}}</p>
+  </div>
+  <mat-paginator
+  [length]="totalItems"
+  [pageSize]="itemsPerPage"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="onPageChange($event)"
+></mat-paginator>
+</div>
